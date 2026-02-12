@@ -1,0 +1,145 @@
+body{
+    background-color: black;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.audio-control {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+#audioControl button {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+}
+
+.volume-container {
+    margin-bottom: 15px;
+
+    opacity: 0;
+    transform: translateY(10px);
+    transition: 0.3s ease;
+
+    pointer-events: none;
+}
+
+.volume-container.active {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+#volume-slider{
+    writing-mode: bt-lr; 
+    -webkit-appearance: slider-vertical;
+    width: 8px;
+    height: 120px;
+}
+
+#sound-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+
+    width: 50px;
+    height: 50px;
+
+    border-radius: 50%;
+    border: none;
+
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    font-size: 20px;
+
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#sound-toggle:hover {
+    transform: scale(1.1);
+}
+
+.terminal {
+    background: #0d0d0d;
+    color: #00ff88;
+    font-family: "Courier New", monospace;
+    padding: 25px;
+    border-radius: 10px;
+    width: 600px;
+    height: auto;
+}
+
+.terminal-link {
+    display: flex;
+    font-family: "Courier New", monospace;
+    color: #00ff88;
+    text-decoration: none;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.typing {
+    font-family: "Courier New", monospace;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 0;
+    animation: typing 3s steps(30, end) forwards;
+}
+
+.typing-link {
+    animation: typing 2s steps(25, end) forwards;
+    width: 0;
+    overflow: hidden;
+    white-space: nowrap
+}
+
+.typing-cd{
+    animation: typing 2s steps(25, end) forwards;
+    width: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    color: white;
+}
+
+.typing-user {
+    font-family: "Courier New", monospace;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 0;
+    animation: typing 3s steps(30, end) forwards;
+    color: whitesmoke;
+}
+
+.cursor {
+    color: #00ff88;
+    animation: blink 0.8s infinite;
+}
+
+@keyframes terminal {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes blink {
+    0%, 50%, 100% { color: #00ff88; }
+    25%, 75% { color: transparent; }
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
